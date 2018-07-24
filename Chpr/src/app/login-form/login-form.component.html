@@ -1,0 +1,21 @@
+<div id="loginFormContainer" *ngIf="!globals.isLoggedIn">
+  <form #loginForm="ngForm" (ngSubmit)="OnSubmit(userName.value, password.value);">
+    <div class="form-group">
+      <label for="userName">User Name</label>
+      <input required ngModel name="userName" #userName="ngModel" id="userName" type="text" class="form-control">
+      <label for="password">Password</label>
+      <input required ngModel name="password" #password="ngModel" id="password" type="password" class="form-control">
+      <button class="">Login</button>
+    </div>
+
+    <div *ngIf="userName.touched && !userName.valid" class="red-text center error-message">
+      <i class="material-icons">error</i> User Name Required
+    </div>
+    <div *ngIf="isLoginError" class="red-text center error-message">
+      <i class="material-icons">error</i> Incorrect username or password
+    </div>
+  </form>
+</div>
+<div *ngIf="globals.isLoggedIn">
+  <h3>Welcome back {{ userClaims.UserName }}</h3>
+</div>

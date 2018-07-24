@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li>
+      <a routerLink="" [class.activated]="currentUrl == '/'">
+        <i class="material-icons" title="Posts">message</i>
+      </a>
+    </li>
+    <li *ngIf="globals.isLoggedIn">
+      <a>
+        <i class="material-icons" id="signout" title="Sign Out" (click)="globals.Logout()">eject</i>
+      </a>
+    </li>
+  </ul>
+</nav>

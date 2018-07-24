@@ -1,0 +1,19 @@
+<ul *ngIf="globals.isLoggedIn">
+  <li>
+    <form #newPostForm="ngForm" (ngSubmit)="OnSubmit(post);">
+      <div class="form-group">
+        <textarea required ngModel name="post" maxlength="140" #post="ngModel" id="post" type="text" class="form-control" (keyup)="OnChange(post);"></textarea>
+        <div>
+          <button class="">Share</button> <span id="remainingCharacters">{{140 - postLength}} characters remaining</span>
+        </div>
+      </div>
+    </form>
+  </li>
+</ul>
+
+<ul [@listStagger]="posts$">
+  <li *ngFor="let post of posts$">
+    <p>{{ post.DatePosted | date:'short'}}</p>
+    <p>{{ post.Text }}</p>
+  </li>
+</ul>
