@@ -19,8 +19,6 @@ export class LoginFormComponent implements OnInit {
   // Class variables
   userClaims: any;  
   isLoginError = false;
-  auth$: Object;
-  user$: Object;
 
   // Initialize
   ngOnInit() {

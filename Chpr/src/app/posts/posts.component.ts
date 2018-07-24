@@ -37,7 +37,6 @@ import { FormControl, NgModel } from '@angular/forms';
 export class PostsComponent implements OnInit {
 
   posts$: Object;
-  isShowNewPost = false;
   postLength = 0;
 
   constructor(private dataService: DataService, private globals: Globals) { }
@@ -47,17 +46,13 @@ export class PostsComponent implements OnInit {
       data => this.posts$ = data
     )
 
-    if (localStorage.getItem('userToken')) {
-      this.isShowNewPost = true;
-    }
-
     // Reset the post length to 0
     this.postLength = 0;
   }
 
   // When the Post Model Changes
   OnChange(post: NgModel) {
-    console.log("Post Changed");
+    // Update the value with the current length
     this.postLength = post.value.length;
   }
 
@@ -67,6 +62,7 @@ export class PostsComponent implements OnInit {
       // Reinitialize ngOnInit
       this.ngOnInit();
 
+      // Reset the form
       post.reset();
     });
   }
