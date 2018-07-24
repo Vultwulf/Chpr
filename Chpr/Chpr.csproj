@@ -252,7 +252,6 @@
     <Content Include=".editorconfig" />
     <Content Include="angular.json" />
     <Content Include="e2e\tsconfig.e2e.json" />
-    <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="dist\Chpr\main.js.map" />
     <Content Include="dist\Chpr\polyfills.js.map" />

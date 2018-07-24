@@ -62,7 +62,6 @@ namespace Chpr.DataLayer
             return filteredPosts;
         }
 
-
         /// <summary>
         /// Delete Post will remove an item from DynamoDb
         /// </summary>

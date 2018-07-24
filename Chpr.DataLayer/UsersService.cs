@@ -83,7 +83,7 @@ namespace Chpr.DataLayer
         /// </summary>
         /// <param name="password">The Password</param>
         /// <returns>Encoded Password string</returns>
-        private string EncodePassword(string password)
+        public string EncodePassword(string password)
         {
             // byte array representation of that string
             byte[] encodedPassword = new UTF8Encoding().GetBytes(password);
