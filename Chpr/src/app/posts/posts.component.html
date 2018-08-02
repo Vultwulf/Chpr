@@ -13,7 +13,7 @@
 
 <ul [@listStagger]="posts$">
   <li *ngFor="let post of posts$">
-    <p>{{ post.DatePosted | date:'short'}}</p>
+    <p>{{ post.UserName }} @ {{ post.DatePosted | date:'short'}}</p>
     <p>{{ post.Text }}</p>
   </li>
 </ul>

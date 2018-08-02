@@ -20,9 +20,9 @@ export class DataService {
     /// <returns type="Any">Server response codes.</returns> 
     var reqHeader = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + localStorage.getItem('userToken')
+      'Authorization': 'Bearer ' + localStorage.getItem("userToken")
     });
-    return this.http.post('/api/posts', {text:text}, { headers: reqHeader });
+    return this.http.post('/api/posts', { userName:localStorage.getItem("userName"), text:text}, { headers: reqHeader });
   }
 
 }

@@ -17,14 +17,13 @@ export class LoginFormComponent implements OnInit {
   constructor(private router: Router, private userService: UserService, private globals: Globals) { }
 
   // Class variables
-  userClaims: any;  
   isLoginError = false;
 
   // Initialize
   ngOnInit() {
     // Revalidate token
     this.userService.getUserClaims().subscribe((data: any) => {
-      this.userClaims = data;
+      this.globals.userClaims = data;
       this.globals.isLoggedIn = true;
       localStorage.setItem('userName', data.UserName);
     },
